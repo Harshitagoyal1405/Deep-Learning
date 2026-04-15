@@ -2,9 +2,6 @@ import numpy as np
 import struct
 from sklearn.metrics import accuracy_score
 
-# ============================
-# LOAD MNIST
-# ============================
 
 def load_images(filename):
     with open(filename, 'rb') as f:
@@ -28,9 +25,7 @@ def one_hot(y, classes=10):
 
 y_train = one_hot(y_train)
 
-# ============================
-# ACTIVATIONS
-# ============================
+
 
 def relu(x):
     return np.maximum(0, x)
@@ -42,9 +37,7 @@ def softmax(x):
     exp_x = np.exp(x - np.max(x, axis=1, keepdims=True))
     return exp_x / np.sum(exp_x, axis=1, keepdims=True)
 
-# ============================
-# TRAIN FUNCTION
-# ============================
+
 
 def train_model(use_momentum=False, use_l2=False):
 
@@ -116,9 +109,7 @@ def train_model(use_momentum=False, use_l2=False):
 
     return accuracy_score(y_test, y_pred)
 
-# ============================
-# RUN EXPERIMENTS
-# ============================
+
 
 acc_sgd = train_model(False, False)
 acc_l2 = train_model(False, True)
