@@ -1,10 +1,5 @@
 import numpy as np
 
-# ===============================
-# SINGLE LAYER PERCEPTRON
-# (AND and OR)
-# ===============================
-
 def step(x):
     return 1 if x >= 0 else 0
 
@@ -44,10 +39,6 @@ print("\nOR Gate Output:")
 test_perceptron(X, W_or, b_or)
 
 
-# ===============================
-# MULTI-LAYER PERCEPTRON
-# (XOR)
-# ===============================
 
 def sigmoid(x):
     return 1/(1+np.exp(-x))
