@@ -3,9 +3,7 @@ import struct
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 
-# ============================
-# LOAD MNIST IDX FILES
-# ============================
+
 
 def load_images(filename):
     with open(filename, 'rb') as f:
@@ -44,9 +42,7 @@ def one_hot(y, num_classes=10):
 y_train_onehot = one_hot(y_train)
 y_test_onehot = one_hot(y_test)
 
-# ============================
-# ACTIVATION FUNCTIONS
-# ============================
+
 
 def relu(x):
     return np.maximum(0, x)
@@ -58,9 +54,7 @@ def softmax(x):
     exp_x = np.exp(x - np.max(x, axis=1, keepdims=True))
     return exp_x / np.sum(exp_x, axis=1, keepdims=True)
 
-# ============================
-# INITIALIZE NETWORK
-# ============================
+
 
 np.random.seed(42)
 
@@ -78,9 +72,7 @@ learning_rate = 0.01
 epochs = 20
 batch_size = 128
 
-# ============================
-# TRAINING (MINI-BATCH)
-# ============================
+
 
 for epoch in range(epochs):
 
