@@ -1,23 +1,12 @@
-# ============================================
-# LAB: Activation Functions & Derivatives
-# ============================================
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ============================================
-# 1. Generate 100 random values
-# ============================================
 
 np.random.seed(42)
 x = np.random.uniform(-10000, 10000, 100)
 
-# Sort values for smooth plotting
 x = np.sort(x)
 
-# ============================================
-# 2. Define Activation Functions
-# ============================================
 
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
@@ -56,9 +45,6 @@ def softplus(x):
 def softplus_derivative(x):
     return sigmoid(x)
 
-# ============================================
-# 3. Plotting
-# ============================================
 
 activations = [
     ("Sigmoid", sigmoid, sigmoid_derivative),
